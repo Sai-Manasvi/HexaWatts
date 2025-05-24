@@ -2,9 +2,8 @@
 
 ## 1) Steer_Motor
 ### Description :
-This program controls the speed of the left and right motors in an EV
-based on the steering angle of the vehicle.       The purpose is to enable   
-smooth cornering by adjusting motor speeds using Ackermann-like geometry.
+This program controls the speed of the left and right motors in an EV based on the steering angle of the vehicle.                                      
+The purpose is to enable smooth cornering by adjusting motor speeds using Ackermann-like geometry.
 * Steering angle is read via ADC (0–4095), mapped to -30° to +30°
 * Vehicle speed is assumed constant for now (2.0 m/s placeholder)
 * Calculates inner and outer wheel speeds using:
@@ -32,8 +31,8 @@ smooth cornering by adjusting motor speeds using Ackermann-like geometry.
  *	uint16_t velocityToPWM (float velocity, float Vmax)                     
  Convert velocity (0–max) to PWM (0–PWM_MAX), Helper to map ADC value to PWM range
  
- *	void updateMotorPWMs (float theta_deg)                        	
- It takes the steering angle (from 0 to 4095) and it adjusts the left and right motor speeds                            
+ *	void updateMotorPWMs (float theta_deg)                        	                                                                        
+ It takes the steering angle (from 0 to 4095) and it adjusts the left and right motor speeds.                            
  If steering is centered (2048), both motors get speed 500
  
  *	void HAL_ADC_ConvCpltCallback (ADC_HandleTypeDef* hadc)                       
