@@ -23,23 +23,23 @@ smooth cornering by adjusting motor speeds using Ackermann-like geometry.
  * V_vehicle = Vehicle Speed
  
  ### Functions:
- *	float degToRad(float deg)
+ *	float degToRad (float deg)      
  Converts degrees to radians
  
- *	float getSteeringAngleFromADC(uint32_t adc)
+ *	float getSteeringAngleFromADC (uint32_t adc)          
  Map ADC value (0–4095) to angle (-30° to +30°)
  
- *	uint16_t velocityToPWM(float velocity, float Vmax)
+ *	uint16_t velocityToPWM (float velocity, float Vmax)                     
  Convert velocity (0–max) to PWM (0–PWM_MAX), Helper to map ADC value to PWM range
  
- *	void updateMotorPWMs(float theta_deg)	
+ *	void updateMotorPWMs (float theta_deg)                        	
  It takes the steering angle (from 0 to 4095) and it adjusts the left and right motor speeds
  If steering is centered (2048), both motors get speed 500
  
- *	void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+ *	void HAL_ADC_ConvCpltCallback (ADC_HandleTypeDef* hadc)                       
  Whenever the steering wheel angle is updated, this will recalculate the motor speeds
 
- * int main(void)
+ * int main(void)                       
  This is the main function that runs when the STM32 powers up
 
 ### Hardware *Assumptions*:
