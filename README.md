@@ -2,29 +2,28 @@
 
 ## Steer_Motor
 ### Description :
- *    This program controls the speed of the left and right motors in an EV
- *    based on the steering angle of the vehicle. The purpose is to enable
- *    smooth cornering by adjusting motor speeds using Ackermann-like geometry.
- *
- *    - Steering angle is read via ADC (0–4095), mapped to -30° to +30°
- *    - Vehicle speed is assumed constant for now (2.0 m/s placeholder)
- *    - Calculates inner and outer wheel speeds using:
- *        V_inner = V * [1 - (B * tan(θ)) / (2L)]
- *        V_outer = V * [1 + (B * tan(θ)) / (2L)]
- *    - Converts each velocity to PWM and sends it to the motors
- *
- * Variables :
- *    - ADC_MAX 	= Steering Wheel *if* from 0-4095 (0-3.3V)
- *    - PWM_MAX 	= Motor Speed 0 to 1000, Adjust based on our timer's ARR
- *    - B 		= Track Width (meters)
- *    - L		= Wheelbase (meters)
- *    - STEER_MAX_ANGLE = Max steering angle in degrees
- *    - PWM (Pulse Width Modulation) output (to control motor speed)
- *    - ADC input (to read steering wheel)
- *    - V_vehicle = Vehicle Speed
- *
- * Functions:
- *	- float degToRad(float deg)
+This program controls the speed of the left and right motors in an EV
+based on the steering angle of the vehicle. The purpose is to enable   
+smooth cornering by adjusting motor speeds using Ackermann-like geometry.
+* Steering angle is read via ADC (0–4095), mapped to -30° to +30°
+* Vehicle speed is assumed constant for now (2.0 m/s placeholder)
+* Calculates inner and outer wheel speeds using:
+* V_inner = V * [1 - (B * tan(θ)) / (2L)]
+* V_outer = V * [1 + (B * tan(θ)) / (2L)]
+* Converts each velocity to PWM and sends it to the motors
+
+### Variables :
+ * ADC_MAX 	= Steering Wheel *if* from 0-4095 (0-3.3V)
+ * PWM_MAX 	= Motor Speed 0 to 1000, Adjust based on our timer's ARR
+ * B 		= Track Width (meters)
+ * L		= Wheelbase (meters)
+ * STEER_MAX_ANGLE = Max steering angle in degrees
+ * PWM (Pulse Width Modulation) output (to control motor speed)
+ * ADC input (to read steering wheel)
+ * V_vehicle = Vehicle Speed
+ 
+ ### Functions:
+ *	float degToRad(float deg)
  *	// Converts degrees to radians
  *
  *	- float getSteeringAngleFromADC(uint32_t adc)
