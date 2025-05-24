@@ -3,8 +3,8 @@
 
 #define ADC_MAX     4095   //steering wheel if from 0-4095 (0-3.3V)
 #define PWM_MAX     1000   //motor speed 0 to 1000, Adjust based on our timer's ARR
-#define B           0.5f   // Track width (meters)
-#define L           1.2f   // Wheelbase (meters)
+#define B           1.275f   // Track width (meters)
+#define L           1.575f   // Wheelbase (meters)
 #define STEER_MAX_ANGLE 30.0f  // Max steering angle in degrees
 
 float V_vehicle = 2.0f; // Placeholder vehicle speed
